@@ -25,6 +25,11 @@ module FrontEnd
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.generators do |gen|
+      gen.view_specs          false
+      gen.helper_specs        false
+    end
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

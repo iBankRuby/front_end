@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -25,6 +26,7 @@ group :development, :test do
   gem 'reek', '~> 4.7', '>= 4.7.2'
   gem 'rubocop', '~> 0.49.1'
   gem 'simplecov', '~> 0.15.0'
+  gem 'factory_girl_rails', '~> 4.8'
 end
 
 group :development do
