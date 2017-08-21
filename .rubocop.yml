@@ -10,6 +10,7 @@ AllCops:
     - config/**/*
     - Gemfile
     - spec/**/*
+    - bin/*
 Metrics/LineLength:
   Max: 120
 Documentation:

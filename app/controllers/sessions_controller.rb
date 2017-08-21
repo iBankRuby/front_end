@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
 
   def create
     auth = Auth.new(user_params.to_hash)
-    auth.sign_in
     Session.create(user_id: user_id, access_token: auth.access_token, refresh_token: auth.refresh_token)
     session[:current_user_id] = auth.user_id
   end

@@ -5,10 +5,12 @@ module Sessions
     def initialize(args)
       @email = args[:email]
       @password = args[:password]
+
+      sign_in
     end
 
     def sign_in
-      response = connection.post &request
+      response = connection.post(&request)
       @response = JSON.parse(response.body).convert_response
     end
 
@@ -27,7 +29,7 @@ module Sessions
     private
 
     def connection
-      Faraday.new(url: 'http://localhost:3000') do |faraday|
+      @connection ||= Faraday.new(url: 'http://localhost:3000') do |faraday|
         faraday.request :url_encoded
         faraday.adapter :net_http
       end
@@ -43,7 +45,7 @@ module Sessions
     end
 
     def convert_response
-      response.reduce({}) { |hash, (key, value)| hash[key.to_sym] = value; hash }
+      response.each_with_object({}) { |(key, value), memo| memo[key.to_sym] = value }
     end
   end
 end

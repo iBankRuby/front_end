@@ -3,7 +3,7 @@ module Decoder
     attr_reader :payload, :header
 
     def decode(token)
-      @payload, @header = JWT.decode token, verify_key, true, { alghoritm: 'RS512' }
+      @payload, @header = JWT.decode token, verify_key, true, alghoritm: 'RS512'
     end
 
     private
