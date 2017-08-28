@@ -14,6 +14,6 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 Documentation:
-    Enabled: false
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false

@@ -1,7 +1,7 @@
 module Sessions
   module Helpers
     def session_exist?
-      !current_session.nil?
+      session_exists? && !current_session.nil?
     end
 
     def current_session

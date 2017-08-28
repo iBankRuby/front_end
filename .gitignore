@@ -17,6 +17,7 @@ coverage/
 .env
 config/secrets.yml
 Gemfile.lock
+app.rsa.pub
 
 /node_modules
 /yarn-error.log

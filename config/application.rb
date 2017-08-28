@@ -21,8 +21,9 @@ module FrontEnd
     config.load_defaults 5.1
 
     config.generators do |gen|
-      gen.view_specs   false
-      gen.helper_specs false
+      gen.test_framework :rspec
+      gen.view_specs     false
+      gen.helper_specs   false
     end
 
     config.generators.system_tests = nil

@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
   resource :registrations, only: %i[update destroy], path: ''
 
-  root to: 'some_controller#show'
+  resources :transactions, only: %i[create update]
+  # root to: 'some_controller#show'
 end

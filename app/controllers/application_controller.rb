@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
 
   def authorize
     Session.sweep(20.minutes)
-    redirect_to :new_user_session_url unless authorized?
+    (redirect_to :new_user_session_url, notice: 'Current session is over.' & return) unless authorized?
     refresh_session
   end
 
   def authorized?
-    session_exists? && session[:current_user_id]
+    session_exist? && session[:current_user_id]
   end
 end
